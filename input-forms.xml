@@ -1,0 +1,1832 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE input-forms SYSTEM "input-forms.dtd">
+
+
+<input-forms>
+
+ <!-- The form-map maps collection handles to forms. DSpace does not       -->
+ <!-- require that a collection's name be unique, even within a community .-->
+ <!-- DSpace does however insure that each collection's handle is unique.  -->
+ <!-- Form-map provides the means to associate a unique collection name    -->
+ <!-- with a form. The form-map also provides the special handle "default" -->
+ <!-- (which is never a collection), here mapped to "traditional". Any     -->
+ <!-- collection which does not appear in this map will be associated with -->
+ <!-- the mapping for handle "default".                                    -->
+
+  <form-map>
+   <name-map collection-handle="default" form-name="traditional" />
+   <name-map collection-handle="11376/4" form-name="thesis" />
+   <name-map collection-handle="11376/28" form-name="thesis" />
+   <name-map collection-handle="11376/32" form-name="thesis" />
+   <name-map collection-handle="11376/33" form-name="thesis" />
+   <name-map collection-handle="11376/34" form-name="thesis" />
+   <name-map collection-handle="11376/40" form-name="thesis" />
+   <name-map collection-handle="11376/1037" form-name="thesis" />
+   <name-map collection-handle="11376/1038" form-name="thesis" />
+   <name-map collection-handle="11376/1043" form-name="thesis" />
+   <name-map collection-handle="11376/2553" form-name="thesis" />
+   <name-map collection-handle="11376/2698" form-name="thesis" />
+   <name-map collection-handle="11376/7" form-name="OpenAIRE" />
+   <name-map collection-handle="11376/122" form-name="report" />
+   <name-map collection-handle="11376/141" form-name="report" />
+   <name-map collection-handle="11376/142" form-name="report" />
+   <name-map collection-handle="11376/154" form-name="report" />
+   <name-map collection-handle="11376/156" form-name="report" />
+   <name-map collection-handle="11376/473" form-name="report" />   
+   <name-map collection-handle="11376/575" form-name="report" />      
+   <name-map collection-handle="11376/516" form-name="report" />
+   <name-map collection-handle="11376/372" form-name="books" />   
+   <name-map collection-handle="11376/374" form-name="books" />   
+   <name-map collection-handle="11376/375" form-name="books" />
+   <name-map collection-handle="11376/377" form-name="books" />   
+   <name-map collection-handle="11376/379" form-name="books" />
+   <name-map collection-handle="11376/576" form-name="books" />   
+   </form-map>
+
+
+ <!-- The form-definitions map lays out the detailed definition of all the -->
+ <!-- submission forms.Each separate form set has a unique name as an      -->
+ <!-- attribute. This name matches one of the names in the form-map. One   -->
+ <!-- named form set has the name "traditional"; as this name suggests,    -->
+ <!-- it is the old style and is also the default, which gets used when    -->
+ <!-- the specified collection has no correspondingly named form set.      -->
+ <!--                                                                      -->
+ <!-- Each form set contains an ordered set of pages; each page defines    -->
+ <!-- one submission metadata entry screen. Each page has an ordered list  -->
+ <!-- of field definitions, Each field definition corresponds to one       -->
+ <!-- metatdata entry (a so-called row), which has a DC element name, a    -->
+ <!-- displayed label, a text string prompt which is called a hint , and   -->
+ <!-- an input-type. Each field also may hold optional elements: DC        -->
+ <!-- qualifier name, a repeatable flag, and a text string whose presence  -->
+ <!-- serves as a 'this field is required' flag.                           -->
+
+ <form-definitions>
+ <!-- Geleneksel veri giriş formu başlanğıcı -->
+   <form name="traditional">
+     <page number="1">
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar adı</label>
+         <input-type value-pairs-name="common_contributor">qualdrop_value</input-type>
+         <hint>Bu yayının yazarlar/yazarlarını "Soyad, Ad" biçiminde giriniz. Ör.: Çelik, Sönmez</hint>
+         <required></required>
+       </field>
+   
+		<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>authorID</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar Numarası (YÖK, WOS, ORCID)</label>
+         <input-type>onebox</input-type>
+         <hint>Yazarın YÖK, WOS, ORCID araştırmacı numarasını giriniz. YÖK ID: http://www.yok.gov.tr/web/acikerisim/yok-arastirmaci-id-sorgula</hint>
+         <required></required>
+       </field>	   
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>department</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazarın Bağlı Olduğu Bölüm</label>
+		 <input-type value-pairs-name="common_department">dropdown</input-type>
+         <hint>Yazarın bağlı olduğu bölümü seçiniz. Birden çok bölüm seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayının Başlığı</label>
+         <input-type>onebox</input-type>
+         <hint>Bu yayının başlığını giriniz.</hint>
+         <required>Bu yayın için bir başlık girmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier>alternative</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Diğer başlıklar</label>
+         <input-type>onebox</input-type>
+         <hint>Eger yayının alternatif başlıkları var ise lütfen giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayıncı</label>
+         <input-type>onebox</input-type>
+         <hint>Yayıncı adını giriniz.</hint>
+         <required></required>
+       </field>  
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayın Tarihi</label>
+         <input-type>date</input-type>
+         <hint>Yayını veya dağıtım tarihini giriniz. Eğer gün ve/veya ay bilgisi mevcut değilse sadece yıl bilgisini giriniz.</hint>
+         <required>En azından yıl bilgisi girmelisiniz.</required>
+       </field>
+	   
+       <!-- Dergi adı alanı -->	  
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>journal</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Dergi / Konferans / Kitap Adı</label>
+         <input-type>onebox</input-type>
+         <hint>Çalışmanın yayımlandığı dergi / konferans / kitap adını giriniz</hint>
+         <required></required>
+       </field>
+
+       <!-- cilt -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>volume</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>Cilt Bilgisi</label>
+           <input-type>onebox</input-type>
+           <hint>Çalışmanın yayımlandığı derginin cilt bilgisini giriniz</hint>
+           <required></required>
+       </field>
+
+       <!-- sayı -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>issue</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>Sayı</label>
+           <input-type>onebox</input-type>
+           <hint>Makalenin yayımlandığı derginin sayı bilgisiniz giriniz</hint>
+           <required></required>
+       </field>
+
+       <!-- başlanğıç sayfası -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>startpage</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>İlk sayfa sayısı</label>
+           <input-type>onebox</input-type>
+           <hint>Makalenin ilk sayfa sayısını giriniz</hint>
+           <required></required>
+       </field>
+
+       <!-- bitiş sayfası -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>endpage</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>Son sayfa sayısı</label>
+           <input-type>onebox</input-type>
+           <hint>Makalenin son sayfa sayısını giriniz</hint>
+           <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Bibliyografik künye</label>
+         <input-type>textarea</input-type>
+         <hint>Bu yayının standart bibliyografik künyesini (atıf biçimi) giriniz.</hint>
+         <required></required>
+       </field>
+
+ <!-- Bu alana Scopus'tan atıf bilgisi çekilmesi için DOI numarsı girilir -->
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>isversionof</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>DOI (Scopus uygulaması için)</label>
+         <input-type>onebox</input-type>
+         <hint>Varsa bu yayının DOI numarasını Scopus uygulaması için 10.2399/yod.13.003 şeklinde giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+	     <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Fon Desteği Sağlanan Yayınlar İçin Proje Numarası</label>
+         <input-type value-pairs-name="common_relation">qualdrop_value</input-type>
+         <hint>Avrupa Birliği (FP7) ve TÜBİTAK fonlarıyla desteklenmiş yayınların proje kodu örneklere uygun biçimde girilmelidir. Ör.:  "info:eu-repo/grantAgreement/EC/FP7/12345" veya "info:eu-repo/grantAgreement/TÜBİTAK/SOBAG/12345"</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Tür</label>
+         <input-type value-pairs-name="common_types">dropdown</input-type>
+         <hint>Öğe içeriğinin türünü seçiniz. Birden çok tür seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required>Bu öğe için bir doküman türü seçmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Tanımlayıcılar</label>
+         <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+         <hint>Eğer yayın ile ilgili kimlik numarası veya kodları varsa, lütfen türlerini ve gerçek sayılarını ya da kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Dil</label>
+         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+         <hint> Öğenin ana içerik dilini seçiniz. Seçmek isteğiniz dil listede yoksa "Diğer" seçeneğini kullanınız. "Veri seti", "resim" gibi öğeler için "Yok" ifadesini seçiniz.</hint>
+         <required></required>
+       </field>
+     </page>
+
+     <page number="2">
+	 <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of twobox MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Anahtar kelimeler</label>
+         <input-type>twobox</input-type>
+         <hint>Uygun anahtar kelimeleri giriniz.</hint>
+         <required></required>
+         <vocabulary>srsc</vocabulary>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Özet</label>
+         <input-type>textarea</input-type>
+         <hint>Yayının özetini giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Sponsor</label>
+         <input-type>textarea</input-type>
+         <hint>Sponsor kurumların adlarını ve/veya finansman kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Açıklama</label>
+         <input-type>textarea</input-type>
+         <hint>Diğer açıklamaları ve yorumları giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		<dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Erişim hakları</label>
+         <input-type value-pairs-name="common_rights">dropdown</input-type>
+         <hint>Bu yayın için erişim hakkı seçiniz.</hint>
+         <required>Bu öğe için bir erişim hakkı seçmelisiniz.</required>
+         <required></required>
+       </field>
+   
+     </page>
+   </form>
+ <!-- Geleneksel veri giriş formu sonu -->
+
+
+ <!-- Rapor veri giriş formu başlanğıcı -->
+   <form name="report">
+     <page number="1">
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar adı</label>
+         <input-type value-pairs-name="common_contributor">qualdrop_value</input-type>
+         <hint>Bu yayının yazarlar/yazarlarını "Soyad, Ad" biçiminde giriniz. Ör.: Çelik, Sönmez</hint>
+         <required></required>
+       </field>
+
+		<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>authorID</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar Numarası (YÖK, WOS, ORCID)</label>
+         <input-type>onebox</input-type>
+         <hint>Yazarın YÖK, WOS, ORCID araştırmacı numarasını giriniz. YÖK ID: http://www.yok.gov.tr/web/acikerisim/yok-arastirmaci-id-sorgula</hint>
+         <required></required>
+       </field>	   
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>department</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazarın Bağlı Olduğu Bölüm</label>
+		 <input-type value-pairs-name="common_department">dropdown</input-type>
+         <hint>Yazarın bağlı olduğu bölümü seçiniz. Birden çok bölüm seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayının Başlığı</label>
+         <input-type>onebox</input-type>
+         <hint>Bu yayının başlığını giriniz.</hint>
+         <required>Bu yayın için bir başlık girmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier>alternative</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Diğer başlıklar</label>
+         <input-type>onebox</input-type>
+         <hint>Eger yayının alternatif başlıkları var ise lütfen giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayıncı</label>
+         <input-type>onebox</input-type>
+         <hint>Yayıncı adını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayın Tarihi</label>
+         <input-type>date</input-type>
+         <hint>Yayını veya dağıtım tarihini giriniz. Eğer gün ve/veya ay bilgisi mevcut değilse sadece yıl bilgisini giriniz.</hint>
+         <required>En azından yıl bilgisi girmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Bibliyografik künye</label>
+         <input-type>textarea</input-type>
+         <hint>Bu yayının standart bibliyografik künyesini (atıf biçimi) giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartofseries</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Seri/Rapor No.</label>
+         <input-type>series</input-type>
+         <hint>Bu yayına verilmiş olan seri/rapor numarasını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+	     <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Fon Desteği Sağlanan Yayınlar İçin Proje Numarası</label>
+         <input-type value-pairs-name="common_relation">qualdrop_value</input-type>
+         <hint>Avrupa Birliği (FP7) ve TÜBİTAK fonlarıyla desteklenmiş yayınların proje kodu örneklere uygun biçimde girilmelidir. Ör.:  "info:eu-repo/grantAgreement/EC/FP7/12345" veya "info:eu-repo/grantAgreement/TÜBİTAK/SOBAG/12345"</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Tür</label>
+         <input-type value-pairs-name="common_types">dropdown</input-type>
+         <hint>Öğe içeriğinin türünü seçiniz. Birden çok tür seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required>Bu öğe için bir doküman türü seçmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Tanımlayıcılar</label>
+         <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+         <hint>Eğer yayın ile ilgili kimlik numarası veya kodları varsa, lütfen türlerini ve gerçek sayılarını ya da kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Dil</label>
+         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+         <hint> Öğenin ana içerik dilini seçiniz. Seçmek isteğiniz dil listede yoksa "Diğer" seçeneğini kullanınız. "Veri seti", "resim" gibi öğeler için "Yok" ifadesini seçiniz.</hint>
+         <required></required>
+       </field>
+     </page>
+
+     <page number="2">
+	 <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of twobox MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Anahtar kelimeler</label>
+         <input-type>twobox</input-type>
+         <hint>Uygun anahtar kelimeleri giriniz.</hint>
+         <required></required>
+         <vocabulary>srsc</vocabulary>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Özet</label>
+         <input-type>textarea</input-type>
+         <hint>Yayının özetini giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Sponsor</label>
+         <input-type>textarea</input-type>
+         <hint>Sponsor kurumların adlarını ve/veya finansman kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Açıklama</label>
+         <input-type>textarea</input-type>
+         <hint>Diğer açıklamaları ve yorumları giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		<dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Erişim hakları</label>
+         <input-type value-pairs-name="common_rights">dropdown</input-type>
+         <hint>Bu yayın için erişim hakkı seçiniz.</hint>
+         <required>Bu öğe için bir erişim hakkı seçmelisiniz.</required>
+         <required></required>
+       </field>
+
+	   </page>
+   </form>
+<!-- Rapor veri giriş formu sonu -->
+   
+<!-- Tez veri giriş formu başlanğıcı -->
+   <form name="thesis">
+     <page number="1">
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar adı</label>
+         <input-type value-pairs-name="common_contributor">qualdrop_value</input-type>
+         <hint>Bu yayının yazarlar/yazarlarını "Soyad, Ad" biçiminde giriniz. Ör.: Çelik, Sönmez</hint>
+         <required></required>
+       </field>
+
+		<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>authorID</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar Numarası (YÖK, WOS, ORCID)</label>
+         <input-type>onebox</input-type>
+         <hint>Yazarın YÖK, WOS, ORCID araştırmacı numarasını giriniz. YÖK ID: http://www.yok.gov.tr/web/acikerisim/yok-arastirmaci-id-sorgula</hint>
+         <required></required>
+       </field>	
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>department</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazarın Bağlı Olduğu Bölüm</label>
+		 <input-type value-pairs-name="common_department">dropdown</input-type>
+         <hint>Yazarın bağlı olduğu bölümü seçiniz. Birden çok bölüm seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tez başlığı</label>
+         <input-type>onebox</input-type>
+         <hint>Tez başlığını giriniz.</hint>
+         <required>Bu tez için bir başlık girmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier>alternative</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Diğer başlıklar</label>
+         <input-type>onebox</input-type>
+         <hint>Eger tezin alternatif başlıkları var ise giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayın Tarihi</label>
+         <input-type>date</input-type>
+         <hint>Yayını veya dağıtım tarihini giriniz. Eğer gün ve/veya ay bilgisi mevcut değilse sadece yıl bilgisini giriniz.</hint>
+         <required>En azından yıl bilgisi girmelisiniz.</required>
+       </field>
+
+       <field>
+        <dc-schema>dc</dc-schema>
+        <dc-element>date</dc-element>
+        <dc-qualifier>submitted</dc-qualifier>
+        <repeatable>false</repeatable>
+        <label>Sunum tarihi</label>
+        <input-type>date</input-type>
+        <hint>Sunulduğu tarih</hint>
+        <required>En azından yıl bilgisi girmelisiniz.</required>
+      </field>
+	  
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Üniversite ve Enstitü</label>
+         <input-type>onebox</input-type>
+         <hint>Tezin yapıldığı üniversite ve enstitü adını giriniz.</hint>
+         <required></required>
+       </field>
+    </page>
+    
+	<page number="2">
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Bibliyografik künye</label>
+         <input-type>textarea</input-type>
+         <hint>Bu yayının standart bibliyografik künyesini (atıf biçimi) giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of twobox MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Anahtar kelimeler</label>
+         <input-type>twobox</input-type>
+         <hint>Uygun anahtar kelimeleri giriniz.</hint>
+         <required></required>
+         <vocabulary>srsc</vocabulary>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Özet</label>
+         <input-type>textarea</input-type>
+         <hint>Tezin özetini giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>tableofcontents</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>İçindekiler</label>
+         <input-type>textarea</input-type>
+         <hint>Tezin içindekiler bilgisini giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Dil</label>
+         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+         <hint>Tezin ana içerik dilini seçiniz. Seçmek isteğiniz dil listede yoksa "Diğer" seçeneğini kullanınız.</hint>
+         <required></required>
+       </field>	
+
+       <field>
+	     <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Fon Desteği Sağlanan Yayınlar İçin Proje Numarası</label>
+         <input-type value-pairs-name="common_relation">qualdrop_value</input-type>
+         <hint>Avrupa Birliği (FP7) ve TÜBİTAK fonlarıyla desteklenmiş yayınların proje kodu örneklere uygun biçimde girilmelidir. Ör.:  "info:eu-repo/grantAgreement/EC/FP7/12345" veya "info:eu-repo/grantAgreement/TÜBİTAK/SOBAG/12345"</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Tür</label>
+         <input-type value-pairs-name="common_types">dropdown</input-type>
+         <hint>Tez türünü seçiniz.</hint>
+         <required>Tez için bir doküman türü seçmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Tanımlayıcılar</label>
+         <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+         <hint>Eğer varsa tezle ile ilgili kimlik numarası, kodları ve erişim adreslerini giriniz.</hint>
+         <required></required>
+       </field>	   
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Sponsor</label>
+         <input-type>textarea</input-type>
+         <hint>Sponsor kurumların adlarını ve/veya finansman kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Açıklama</label>
+         <input-type>textarea</input-type>
+         <hint>Diğer açıklamaları ve yorumları giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+    	 <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Erişim hakları</label>
+         <input-type value-pairs-name="common_rights">dropdown</input-type>
+         <hint>Bu tez için bir erişim hakkı türü seçiniz.</hint>
+         <required>Bu tez için bir erişim hakkı türü seçmelisiniz.</required>
+         <required></required>
+       </field>	   
+	      
+     </page>
+   </form>
+<!-- Tez veri giriş formu sonu -->
+
+<!-- OpenAIRE giriş formu başlanğıcı -->
+   <form name="OpenAIRE">
+     <page number="1">
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar adı</label>
+         <input-type value-pairs-name="common_contributor">qualdrop_value</input-type>
+         <hint>Bu yayının yazarlar/yazarlarını "Soyad, Ad" biçiminde giriniz. Ör.: Çelik, Sönmez</hint>
+         <required></required>
+       </field>
+
+		<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>authorID</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar Numarası (YÖK, WOS, ORCID)</label>
+         <input-type>onebox</input-type>
+         <hint>Yazarın YÖK, WOS, ORCID araştırmacı numarasını giriniz. YÖK ID: http://www.yok.gov.tr/web/acikerisim/yok-arastirmaci-id-sorgula</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>department</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazarın Bağlı Olduğu Bölüm</label>
+		 <input-type value-pairs-name="common_department">dropdown</input-type>
+         <hint>Yazarın bağlı olduğu bölümü seçiniz. Birden çok bölüm seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayının Başlığı</label>
+         <input-type>onebox</input-type>
+         <hint>Bu yayının başlığını giriniz.</hint>
+         <required>Bu yayın için bir başlık girmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier>alternative</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Diğer başlıklar</label>
+         <input-type>onebox</input-type>
+         <hint>Eger yayının alternatif başlıkları var ise lütfen giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayın Tarihi</label>
+         <input-type>date</input-type>
+         <hint>Yayını veya dağıtım tarihini giriniz. Eğer gün ve/veya ay bilgisi mevcut değilse sadece yıl bilgisini giriniz.</hint>
+         <required>En azından yıl bilgisi girmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayıncı</label>
+         <input-type>onebox</input-type>
+         <hint>Yayıncı adını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <!-- Dergi adı alanı -->	  
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>journal</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Dergi / Konferans / Kitap Adı</label>
+         <input-type>onebox</input-type>
+         <hint>Çalışmanın yayımlandığı dergi / konferans / kitap adını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <!-- cilt -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>volume</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>Cilt Bilgisi</label>
+           <input-type>onebox</input-type>
+           <hint>Çalışmanın yayımlandığı derginin cilt bilgisini giriniz</hint>
+           <required></required>
+       </field>
+
+       <!-- sayı -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>issue</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>Sayı</label>
+           <input-type>onebox</input-type>
+           <hint>Makalenin yayımlandığı derginin sayı bilgisiniz giriniz</hint>
+           <required></required>
+       </field>
+
+       <!-- başlanğıç sayfası -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>startpage</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>İlk sayfa sayısı</label>
+           <input-type>onebox</input-type>
+           <hint>Makalenin ilk sayfa sayısını giriniz</hint>
+           <required></required>
+       </field>
+
+       <!-- bitiş sayfası -->
+       <field>
+           <dc-schema>dc</dc-schema>
+           <dc-element>identifier</dc-element>
+           <dc-qualifier>endpage</dc-qualifier>
+           <repeatable>false</repeatable>
+           <label>Son sayfa sayısı</label>
+           <input-type>onebox</input-type>
+           <hint>Makalenin son sayfa sayısını giriniz</hint>
+           <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Bibliyografik künye</label>
+         <input-type>textarea</input-type>
+         <hint>Bu yayının standart bibliyografik künyesini (atıf biçimi) giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>isversionof</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>DOI (Scopus uygulaması için)</label>
+         <input-type>onebox</input-type>
+         <hint>Varsa bu yayının DOI numarasını Scopus uygulaması için 10.2399/yod.13.003 şeklinde giriniz.</hint>
+         <required></required>
+       </field>
+	   
+<!-- OpenAIRE ek alanlari Uygulamasi -->
+       <field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>FP7 Proje Numarası</label>
+         <input-type>onebox</input-type>
+         <hint>Avrupa Komisyonu (FP7) destekli yayınların proje kodu örneğe uygun biçimde girilmelidir. Ör.: [info:eu-repo/grantAgreement/EC/FP7/12345]</hint>
+         <required></required>
+       </field>
+
+   <field>
+	 <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Erişim hakları</label>
+         <input-type value-pairs-name="common_rights">dropdown</input-type>
+         <hint>Bu yayın için erişim hakkı seçiniz.</hint>
+         <required>Bu öğe için bir erişim hakkı seçmelisiniz.</required>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Ambargo Tarihi</label>
+         <input-type>date</input-type>
+         <hint>Yayının erişime açılacağı ambargo tarihini giriniz.</hint>
+         <required>En azından yıl bilgisi girmelisiniz.</required>
+       </field>
+ <!--  OpenAIRE ek alanlari Uygulamasi Sonu -->
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Tanımlayıcılar</label>
+         <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+         <hint>Eğer yayın ile ilgili kimlik numarası veya kodları varsa, lütfen türlerini ve gerçek sayılarını ya da kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Tür</label>
+         <input-type value-pairs-name="common_types">dropdown</input-type>
+         <hint>Öğe içeriğinin türünü seçiniz. Birden çok tür seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required>Bu öğe için bir doküman türü seçmelisiniz.</required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Dil</label>
+         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+         <hint> Öğenin ana içerik dilini seçiniz. Seçmek isteğiniz dil listede yoksa "Diğer" seçeneğini kullanınız. "Veri seti", "resim" gibi öğeler için "Yok" ifadesini seçiniz.</hint>
+         <required></required>
+       </field>
+     </page>
+
+     <page number="2">
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of twobox MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Anahtar kelimeler</label>
+         <input-type>twobox</input-type>
+         <hint>Uygun anahtar kelimeleri giriniz.</hint>
+         <required></required>
+         <vocabulary>srsc</vocabulary>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Özet</label>
+         <input-type>textarea</input-type>
+         <hint>Yayının özetini giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Sponsor</label>
+         <input-type>textarea</input-type>
+         <hint>Sponsor kurumların adlarını ve/veya finansman kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Açıklama</label>
+         <input-type>textarea</input-type>
+         <hint>Diğer açıklamaları ve yorumları giriniz.</hint>
+         <required></required>
+       </field>
+     </page>
+   </form>
+<!-- OpenAIRE giriş formu sonu -->   
+
+ <!-- Kitap veri giriş formu başlanğıcı -->
+   <form name="books">
+     <page number="1">
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar adı</label>
+         <input-type value-pairs-name="common_contributor">qualdrop_value</input-type>
+         <hint>Bu yayının yazarlar/yazarlarını "Soyad, Ad" biçiminde giriniz. Ör.: Çelik, Sönmez</hint>
+         <required></required>
+       </field>
+
+		<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>authorID</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazar Numarası (YÖK, WOS, ORCID)</label>
+         <input-type>onebox</input-type>
+         <hint>Yazarın YÖK, WOS, ORCID araştırmacı numarasını giriniz. YÖK ID: http://www.yok.gov.tr/web/acikerisim/yok-arastirmaci-id-sorgula</hint>
+         <required></required>
+       </field>  
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>department</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Yazarın Bağlı Olduğu Bölüm</label>
+		 <input-type value-pairs-name="common_department">dropdown</input-type>
+         <hint>Yazarın bağlı olduğu bölümü seçiniz. Birden çok bölüm seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayının Başlığı</label>
+         <input-type>onebox</input-type>
+         <hint>Bu yayının başlığını giriniz.</hint>
+         <required>Bu yayın için bir başlık girmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier>alternative</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Diğer başlıklar</label>
+         <input-type>onebox</input-type>
+         <hint>Eger yayının alternatif başlıkları var ise lütfen giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayıncı</label>
+         <input-type>onebox</input-type>
+         <hint>Yayıncı adını giriniz.</hint>
+         <required></required>
+       </field>	   
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>version</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Baskı</label>
+         <input-type>onebox</input-type>
+         <hint>Yayının baskı bilgisini giriniz.</hint>
+         <required></required>
+       </field>	
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Yayın Tarihi</label>
+         <input-type>date</input-type>
+         <hint>Yayını veya dağıtım tarihini giriniz. Eğer gün ve/veya ay bilgisi mevcut değilse sadece yıl bilgisini giriniz.</hint>
+         <required>En azından yıl bilgisi girmelisiniz.</required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Bibliyografik künye</label>
+         <input-type>textarea</input-type>
+         <hint>Bu yayının standart bibliyografik künyesini (atıf biçimi) giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartofseries</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Dizi Adı/Yayın No.</label>
+         <input-type>series</input-type>
+         <hint>Bu yayının dizi adı ve yayın numarasını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+	     <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Fon Desteği Sağlanan Yayınlar İçin Proje Numarası</label>
+         <input-type value-pairs-name="common_relation">qualdrop_value</input-type>
+         <hint>Avrupa Birliği (FP7) ve TÜBİTAK fonlarıyla desteklenmiş yayınların proje kodu örneklere uygun biçimde girilmelidir. Ör.:  "info:eu-repo/grantAgreement/EC/FP7/12345" veya "info:eu-repo/grantAgreement/TÜBİTAK/SOBAG/12345"</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Tür</label>
+         <input-type value-pairs-name="common_types">dropdown</input-type>
+         <hint>Öğe içeriğinin türünü seçiniz. Birden çok tür seçmek için "CTRL" veya "Shift" tuşunu kullanabilirsiniz.</hint>
+         <required>Bu öğe için bir doküman türü seçmelisiniz.</required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of qualdrop_value MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Tanımlayıcılar</label>
+         <input-type value-pairs-name="common_identifiers">qualdrop_value</input-type>
+         <hint>Eğer yayın ile ilgili kimlik numarası veya kodları varsa, lütfen türlerini ve gerçek sayılarını ya da kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Dil</label>
+         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+         <hint>Öğenin ana içerik dilini seçiniz. Seçmek isteğiniz dil listede yoksa "Diğer" seçeneğini kullanınız. "Veri seti", "resim" gibi öğeler için "Yok" ifadesini seçiniz.</hint>
+         <required></required>
+       </field>
+     </page>
+
+     <page number="2">
+	 <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <!-- An input-type of twobox MUST be marked as repeatable -->
+         <repeatable>true</repeatable>
+         <label>Anahtar kelimeler</label>
+         <input-type>twobox</input-type>
+         <hint>Uygun anahtar kelimeleri giriniz.</hint>
+         <required></required>
+         <vocabulary>srsc</vocabulary>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Özet</label>
+         <input-type>textarea</input-type>
+         <hint>Yayının özetini giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>tableofcontents</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>İçindekiler</label>
+         <input-type>textarea</input-type>
+         <hint>Yayının içindekiler bilgisini giriniz.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Sponsor</label>
+         <input-type>textarea</input-type>
+         <hint>Sponsor kurumların adlarını ve/veya finansman kodlarını giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Açıklama</label>
+         <input-type>textarea</input-type>
+         <hint>Diğer açıklamaları ve yorumları giriniz.</hint>
+         <required></required>
+       </field>
+
+       <field>
+		<dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Erişim hakları</label>
+         <input-type value-pairs-name="common_rights">dropdown</input-type>
+         <hint>Bu yayın için erişim hakkı seçiniz.</hint>
+         <required>Bu öğe için bir erişim hakkı seçmelisiniz.</required>
+         <required></required>
+       </field>
+	   	   	   
+     </page>
+   </form>
+ <!-- Kitap veri giriş formu sonu -->
+ </form-definitions>
+
+
+ <!-- form-value-pairs populate dropdown and qualdrop-value lists.          -->
+ <!-- The form-value-pairs element holds child elements named 'value-pairs' -->
+ <!-- A 'value-pairs' element has a value-pairs-name and a dc-term          -->
+ <!-- attribute. The dc-term attribute specifies which to which Dublin Core -->
+ <!-- Term this set of value-pairs applies.                                 -->
+ <!--     Current dc-terms are: identifier-pairs, type-pairs, and           -->
+ <!--     language_iso-pairs. The name attribute matches a name             -->
+ <!--     in the form-map, above.                                           -->
+ <!-- A value-pair contains one 'pair' for each value displayed in the list -->
+ <!-- Each pair contains a 'displayed-value' element and a 'stored-value'   -->
+ <!-- element. A UI list displays the displayed-values, but the program     -->
+ <!-- stores the associated stored-values in the database.                  -->
+
+ <form-value-pairs>
+   <value-pairs value-pairs-name="common_identifiers" dc-term="identifier">
+   <pair>
+      <displayed-value>URI/URL</displayed-value>
+      <stored-value>uri</stored-value>
+   </pair>
+     <pair>
+       <displayed-value>ISBN</displayed-value>
+       <stored-value>isbn</stored-value>
+     </pair>
+	 <pair>
+       <displayed-value>ISSN / e-ISSN</displayed-value>
+       <stored-value>issn</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>ISMN</displayed-value>
+       <stored-value>ismn</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Resmi Belge #</displayed-value>
+       <stored-value>govdoc</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Diğer</displayed-value>
+       <stored-value>other</stored-value>
+     </pair>	 
+   </value-pairs>
+
+<!-- Fon destegi sağlayan kuruluşlar -->
+   <value-pairs value-pairs-name="common_relation" dc-term="relation">
+   <pair>
+     <displayed-value>Avrupa Komisyonu</displayed-value>
+     <stored-value>ec</stored-value>
+   </pair>   
+   <pair>
+      <displayed-value>TÜBİTAK</displayed-value>
+      <stored-value>tubitak</stored-value>
+   </pair>
+   </value-pairs>
+
+<!-- Yazar ve Sorumlular -->
+   <value-pairs value-pairs-name="common_contributor" dc-term="contributor">
+   <pair>
+      <displayed-value>Yazar</displayed-value>
+      <stored-value>author</stored-value>
+   </pair>
+   <pair>
+      <displayed-value>Danışman</displayed-value>
+      <stored-value>advisor</stored-value>
+   </pair>
+   <pair>
+      <displayed-value>Editör</displayed-value>
+      <stored-value>editor</stored-value>
+   </pair>
+   <pair>
+      <displayed-value>Resimleyen</displayed-value>
+      <stored-value>illustrator</stored-value>
+   </pair>
+   <pair>
+      <displayed-value>Diğer</displayed-value>
+      <stored-value>other</stored-value>
+   </pair>
+   </value-pairs>
+
+   
+<!-- Erisim Hakkı seçenekleri -->
+   <value-pairs value-pairs-name="common_rights" dc-term="rights">
+     <pair>
+       <displayed-value>Açık erişim</displayed-value>
+       <stored-value>info:eu-repo/semantics/openAccess</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Ambargolu erişim</displayed-value>
+       <stored-value>info:eu-repo/semantics/embargoedAccess</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Sınırlı erişim</displayed-value>
+       <stored-value>info:eu-repo/semantics/restrictedAccess</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Kapalı erişim</displayed-value>
+       <stored-value>info:eu-repo/semantics/closedAccess</stored-value>
+     </pair> 
+   </value-pairs>
+<!-- Erişim Hakkı seçenekleri sonu -->
+
+<!-- Bölüm seçenekleri -->
+   <value-pairs value-pairs-name="common_department" dc-term="department">
+		<pair>
+			<displayed-value>Bölüm Yok</displayed-value>
+			<stored-value>Bölüm Yok</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi</displayed-value>
+			<stored-value>Doğuş Üniversitesi</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Bilgisayar ve Enformasyon Bilimleri Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Bilgisayar ve Enformasyon Bilimleri Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Endüstri Mühendisliği Doktora Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Endüstri Mühendisliği Doktora Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Matematik Doktora Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Matematik Doktora Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Mühendislik ve Teknoloji Yönetimi Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Bilimleri Enstitüsü, Mühendislik ve Teknoloji Yönetimi Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Fen Bilimleri Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Fen Bilimleri Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Fizik Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Fizik Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, İletişim Bilimleri Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, İletişim Bilimleri Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, İngiliz Dili ve Edebiyatı Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, İngiliz Dili ve Edebiyatı Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, İnsan ve Toplum Bilimleri Birimi</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, İnsan ve Toplum Bilimleri Birimi</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Kimya Birimi</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Kimya Birimi</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Matematik Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Matematik Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Psikoloji Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Fen Edebiyat Fakültesi, Psikoloji Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi Medeni Hukuk Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi Medeni Hukuk Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Anayasa Hukuku Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Anayasa Hukuku Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Ceza ve Ceza Muhakemesi Hukuku Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Ceza ve Ceza Muhakemesi Hukuku Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Devletler Hukuku Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Devletler Hukuku Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, İdare Hukuku Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, İdare Hukuku Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Kamu Hukuku Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Kamu Hukuku Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Medeni Usul ve İcra İflas Hukuku Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Medeni Usul ve İcra İflas Hukuku Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Milletlerarası Hukuk Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Milletlerarası Hukuk Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Özel Hukuk Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Özel Hukuk Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Hukuk Fakültesi, Ticaret Hukuk Anabilim Dalı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Hukuk Fakültesi, Ticaret Hukuk Anabilim Dalı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, Ekonomi ve Finans Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, Ekonomi ve Finans Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, İşletme Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, İşletme Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, Uluslararası İlişkiler Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, Uluslararası İlişkiler Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, Uluslararası Ticaret ve İşletmecilik Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, İktisadi ve İdari Bilimler Fakültesi, Uluslararası Ticaret ve İşletmecilik Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Kütüphane ve Dokümantasyon Merkezi Müdürlüğü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Kütüphane ve Dokümantasyon Merkezi Müdürlüğü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Bankacılık ve Sigortacılık Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Bankacılık ve Sigortacılık Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Bilgisayar Programcılığı Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Bilgisayar Programcılığı Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Dış Ticaret Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Dış Ticaret Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Emlak ve Emlak Yönetimi Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Emlak ve Emlak Yönetimi Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Grafik Tasarımı Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Grafik Tasarımı Programı</stored-value>
+		</pair>		
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Halkla ilişkiler ve Tanıtım Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Halkla ilişkiler ve Tanıtım Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, İnsan Kaynakları Yönetimi Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, İnsan Kaynakları Yönetimi Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, İşçi Sağlığı ve Güveliği Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, İşçi Sağlığı ve Güveliği Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Menkul Kıymetler ve Sermaye Piyasası Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Menkul Kıymetler ve Sermaye Piyasası Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Muhasebe ve Vergi Uygulamaları Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Muhasebe ve Vergi Uygulamaları Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Turizm ve Otel İşletmeciliği Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Turizm ve Otel İşletmeciliği Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Uygulamalı İngilizce-Türkçe Çevirmenlik Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Meslek Yüksekokulu, Uygulamalı İngilizce-Türkçe Çevirmenlik Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Bilgisayar Mühendisliği Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Bilgisayar Mühendisliği Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Bilgisayar Mühendisliği Bölümü, Bilişim Sistemleri Mühendisliği Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Bilgisayar Mühendisliği Bölümü, Bilişim Sistemleri Mühendisliği Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Elektronik ve Haberleşme Mühendisliği Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Elektronik ve Haberleşme Mühendisliği Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Endüstri Mühendisliği Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Endüstri Mühendisliği Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Kontrol ve Otomasyon Mühendisliği Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Kontrol ve Otomasyon Mühendisliği Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Makine Mühendisliği Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Mühendislik Fakültesi, Makine Mühendisliği Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Mütevelli Heyeti</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Mütevelli Heyeti</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Endüstri Ürünleri Tasarımı Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Endüstri Ürünleri Tasarımı Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Görsel İletişim Tasarımı Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Görsel İletişim Tasarımı Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Grafik Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Grafik Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, İç Mimarlık Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, İç Mimarlık Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Mimarlık Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Mimarlık Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Resim Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sanat ve Tasarım Fakültesi, Resim Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Çeviribilim Doktora Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Çeviribilim Doktora Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Finansal İktisat Doktora Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Finansal İktisat Doktora Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Finansal İktisat Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Finansal İktisat Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, İletişim Bilimleri Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, İletişim Bilimleri Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, İngiliz Edebiyatı Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, İngiliz Edebiyatı Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, İşletme Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, İşletme Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Küresel İlişkiler ve Avrupa Birliği Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Küresel İlişkiler ve Avrupa Birliği Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Plastik Sanatlar Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Plastik Sanatlar Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Psikoloji Yüksek Lisans Programı</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Sosyal Bilimler Enstitüsü, Psikoloji Yüksek Lisans Programı</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Türk Dili ve İnkılap Tarihi Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Türk Dili ve İnkılap Tarihi Bölümü</stored-value>
+		</pair>
+		<pair>
+			<displayed-value>Doğuş Üniversitesi, Yabancı Diller Bölümü</displayed-value>
+			<stored-value>Doğuş Üniversitesi, Yabancı Diller Bölümü</stored-value>
+		</pair>
+   </value-pairs>
+<!-- Bölüm seçenekleri sonu-->
+
+<!-- Yayın Türü Seçenekleri -->
+   <value-pairs value-pairs-name="common_types" dc-term="type">
+     <pair>
+       <displayed-value>Animasyon</displayed-value>
+       <stored-value>animation</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Bilgi Notu</displayed-value>
+       <stored-value>annotation</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Çalışma Belgesi</displayed-value>
+       <stored-value>workingPaper</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Editöryal</displayed-value>
+       <stored-value>editorial</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Görsel</displayed-value>
+       <stored-value>image</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Görsel, 3-D</displayed-value>
+       <stored-value>image, 3-D</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Harita</displayed-value>
+       <stored-value>map</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>İnceleme</displayed-value>
+       <stored-value>review</stored-value>
+     </pair>	 
+	 <pair>
+       <displayed-value>Kayıt, Akuistik</displayed-value>
+       <stored-value>recording, acoustical</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Kayıt, Mizikal</displayed-value>
+       <stored-value>recording, musical</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Kayıt, Sözlü</displayed-value>
+       <stored-value>recording, oral</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Kitap</displayed-value>
+       <stored-value>book</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Kitap Bölümü</displayed-value>
+       <stored-value>bookPart</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Konferans Öğesi</displayed-value>
+       <stored-value>conferenceObject</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Makale</displayed-value>
+       <stored-value>article</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Mektup</displayed-value>
+       <stored-value>letter</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Mimari Plan</displayed-value>
+       <stored-value>plan or blueprint</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Müzik Notası</displayed-value>
+       <stored-value>musical score</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Öğrenim Kaynağı</displayed-value>
+       <stored-value>learning object</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Ön Baskı</displayed-value>
+       <stored-value>preprint</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Patent</displayed-value>
+       <stored-value>patent</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Rapor</displayed-value>
+       <stored-value>report</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Proje</displayed-value>
+       <stored-value>project</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Sunum</displayed-value>
+       <stored-value>presentation</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Gazete/Dergiye Katkı</displayed-value>
+       <stored-value>contributionToPeriodical</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Tez, Yüksek Lisans</displayed-value>
+       <stored-value>masterThesis</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Tez, Doktora</displayed-value>
+       <stored-value>doctoralThesis</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Tez, Uzmanlık</displayed-value>
+       <stored-value>specialistThesis</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Veri Seti</displayed-value>
+       <stored-value>dataset</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Video</displayed-value>
+       <stored-value>video</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Yazılım</displayed-value>
+       <stored-value>software</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Diğer</displayed-value>
+       <stored-value>other</stored-value>
+     </pair>
+   </value-pairs>
+<!-- Yayın Türü Seçenekleri sonu-->
+  
+
+<!-- Dil Seçenekleri -->
+   <!-- default language order: (from dspace 1.2.1)
+        "en_US", "en", "es", "de", "fr", "it", "ja", "zh", "other", ""
+     -->
+   <value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
+     <pair>
+       <displayed-value>Yok</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Türkçe</displayed-value>
+       <stored-value>tur</stored-value>
+      </pair>
+     <pair>
+       <displayed-value>İngilizce</displayed-value>
+       <stored-value>eng</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Almanca</displayed-value>
+       <stored-value>deu</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Fransızca</displayed-value>
+       <stored-value>fra</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>İtalyanca</displayed-value>
+       <stored-value>ita</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Çince</displayed-value>
+       <stored-value>zho</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Diğer</displayed-value>
+       <stored-value>other</stored-value>
+     </pair>
+   </value-pairs>
+ <!-- Dil Seçenekleri sonu-->  
+
+    </form-value-pairs>
+
+</input-forms>
