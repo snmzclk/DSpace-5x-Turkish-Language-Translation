@@ -1,0 +1,412 @@
+<!--
+
+    The contents of this file are subject to the license and copyright
+    detailed in the LICENSE and NOTICE files at the root of the source
+    tree and available online at
+
+    http://www.dspace.org/license/
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <title>DSpace: Site Yöneticisi Oturum Desteği</title>
+    <link rel="stylesheet" href="../styles.css" type="text/css"/>
+  </head>
+
+  <body class="help">
+    <h2>Site Yöneticisi Yardımı</h2>
+
+    <table>
+      <tr>
+        <td align="left"><h3>Yardım İçeriği</h3></td>
+        <td align="right"><a href="#" onclick="window.close()">Bu Pencereyi Kapat</a></td>
+      </tr>
+    </table>
+
+    <ul>
+      <li><a href="#general">Genel Bilgi</a></li>
+      <li><a href="#topcommunity">Üst Seviye Bölüm Oluşturma</a></li>
+      <li><a href="#subcommunity">Alt Bölüm Oluşturma</a></li>
+      <li><a href="#editcommunity">Bölüm Düzenleme</a></li>
+      <li><a href="#createcollection">Koleksiyon Oluşturma</a></li>
+      <li><a href="#editcollection">Koleksiyon Düzenleme</a></li>
+      <li><a href="#epeople">eKişiler</a></li>
+      <li><a href="#groups">Gruplar</a></li>
+      <li><a href="#items">Öğeler</a></li>
+      <li><a href="#supervision">Denetim Kuralları</a></li>
+      <li><a href="#dublincore">Dublin Core Kayıt</a></li>
+      <li><a href="#bitstream">Bitstream Biçim Kaydı</a></li>
+      <li><a href="#workflow">İş Akışı</a></li>
+      <li><a href="#authorize">Yetkilendirme</a></li>
+      <li><a href="#editnews">Haberleri Düzenle</a></li>
+      <li><a href="#editlicense">Varsayılan Lisansı Düzenle</a></li>
+    </ul>
+
+    <h3><a name="general"></a>Genel Bilgi</h3>
+
+    <p>DSpace 1.2. itibariyle, çoğu yönetim araçlarına bilinen DSpace arayüzünden ulaşılabilecektir. Ancak; bunlar sadece yönetici olarak giriş yapıldığında görülebilecektir. Bunu yapmanın en kolay yolu DSpace'im sayfasına gitmektir. </p>
+
+    <p>Bazı komutlar mutlaka Web arayüzününden, yönetici oturumu açılarak çalışıtırılmalıdır. Yönetici arayüzüne erişmek için DSpace'in temel web adresinin devamına /dspace-admin yönetim yazmanız gerekmektedir.  Örneğin;</p>
+
+    <pre>https://earsiv.dogus.edu.tr/dspace-admin</pre>
+
+    <p>Sayfaya erişmek için yönetici oturumunu doğrulamanız gerekmektedir. Sonrasında, gezinme çubuğunun solundaki ilgili araçlara tıklayınız.</p>
+
+
+    <h3><a name="topcommunity"></a>Üst Seviye Bölüm Oluşturma</h3>
+
+    <p>Üst seviye bölüm oluşturmak için; yönetici oturumu ile bağlandıktan sonra Bölüm & Koleksiyon listeleme sayfasına gidiniz. Ekranın sağında, Üst Seviye Bölüm Oluştur seçeneği bulunmaktadır. Buna tıkladığınızda, yeni bir üst seviye bölüm oluşturulacak ve 'Bölüm Düzenleme' sayfasına yönlendirileceksiniz.</p>
+
+
+    <h3><a name="subcommunity"></a>Alt Bölüm Oluşturma</h3>
+
+    <p>Alt bölüm oluşturmak için; bu bölümü kapsayan ana bölümün  sayfasına gidin. Sonra sayfanın sağ üst köşesindeki 'Yönetim Araçları' çubuğundan 'Alt Bölüm Oluştur' tuşuna tıklayınız. Bu yeni bir bölüm oluşturacak ve 'Bölüm Oluştur' sayfasına yönlendirileceksiniz.</p>
+
+
+    <h3><a name="editcommunity"></a>Bölüm Oluştur</h3>
+
+    <ul>
+      <li>Formu istenilen şekilde doldurunuz. 'Ad', 'Kısa Açıklama' ve 'Tanıtıcı Metin (HTML)' kısımları zorunlu; geri kalan kısımlar isteğe bağlıdır. </li>
+      
+      <li>'Kısa Açıklama' kısmı bölüm listesi sayfasındaki bölüm adının altında yer almaktadır ve bölümü tanımlayan bir iki cümlelik düz bir metin şeklinde olmalıdır.</li>
+      
+      <li>'Tanıtıcı Metin (HTML)', 'kenar çubuğu' ve 'telif hakkı' metni alanları bölümün ana sayfasında görüntülenmektedir. 'Tanıtıcı Metin (HTML)' ve 'kenar çubuğu'nun her ikisi de HTML alanıdır, bu yüzden metin kısmı &lt;p&gt; &lt;/p&gt; etiketleri arasında yazılmalıdır.      </li>
+      
+      <li>Bölümün ana sayfasında yer alacak bir logo eklemek istiyorsanız <strong>Logo</strong> butonuna tıklayınız. Açılan ekranda logo dosyasının yolunu yazın ya da ya da logo dosyasını aratıp <strong>Yükle</strong> tuşuna basın. Eğer bir bölüm oluşturuyorsanız, en iyisi formun geri kalanını da doldurmaktır, <strong>Güncelle</strong> butonuna tıklayarak logo yükleme sayfanıza geri dönebilirsiniz. Genelde küçük boyutlu logolar koleksiyon bölümü ana sayfa tasarımından ötürü daha iyi görünmektedir.</li>
+      
+      <li>Bölüm sayfası için gereken tüm bilgiler girildiğinde <strong>Oluştur</strong> tuşuna tıklayınız.</li>
+    </ul>
+
+
+    <h3><a name="createcollection"></a>Koleksiyon Oluşturma</h3>
+
+    <p>Koleksiyon oluşturma, modern işletim sistemlerinde kullanılan çoğu insanın alışkın olduğu ‘kurulum sihirbazı’ tarzı bir araç ile yapılmaktadır. DSpace gönderi arayüzüne oldukça benzemektedir.</p>
+
+    <p><strong>Not: Bu sihirbaz ile yeni eKişileri ekleyemezsiniz. </strong>Tüm eKişilerin kayıtları öncelikle sisteme yüklenmelidir. Ancak; gerektiği takdirde daha sonra koleksiyonla ilişkili gruba, eKişi ve / veya gruplar ekleyebilirsiniz.</p>
+
+    <p>Koleksiyon oluşturmak için, oturum açtığınızdan emin olun, koleksiyonun yer alacağı bölüm için ilgili bölümün ana sayfasına gidiniz ve sayfanın sağ üst köşesinde yer alan 'Koleksiyon Oluştur' butonuna tıklayınız. Bu işlem sihirbazı çalıştıracaktır.</p>
+
+    <h4><a name="wizard_questions"></a>Koleksiyonu Tanımlayın (İşaret Kutuları)</h4>
+
+    <p>Sihirbazın ilk sayfası size koleksiyonla ilgili bazı sorular soracak.  Oluşturduğunuz koleksiyon için uyan olanları işaretleyin ve 'Sonraki' tuşuna tıklayın. Sihirbaz tamamlandıktan sonra da koleksiyonu düzenleyebilme imkanınız olacak, bu yüzden burada aldığınız kararlar kalıcı değildir.</p>
+<p>Ancak sihirbazın 'geri' tuşları yoktur, bu yüzden 'Sonraki' tuşuna bastıktan sonra herhangi bir şeyi değiştirmek isterseniz, sihirbazı sonlandırmalı ve sonra geri dönüp koleksiyonu düzenlemelisiniz.</p>
+
+    <p>Sihirbazı tamamladıktan sonra, Koleksiyonu Düzenle ekranı belirecektir. Bu sizin kaydettiklerinizi yeniden gözden geçirme ve gerekli düzenlemeleri yapma imkânı tanır. </p>
+
+    <p>Not 1:  Eğer <strong>Yeni öğeler herkes tarafından okunabilir</strong> seçeneği işaretli ise; gönderi arayüzü ya da yığın aktarma ile gelen yeni öğeler ve veri akışları varsayılan şekilde anonim OKUMA iznine sahip olacaklardır. Bunu sonradan değiştirebilirsiniz, böylece, örneğin öğeler bilinmeyen okuma izni alabilirler ama veri akışları alamayabilir. ‘Eşlenmiş’ öğelerin veya diğer koleksiyonlardan alınanların yetkileri değişmeyecektir.</p>
+
+    <p>Not 2: <strong>Yeni öğeler herkes tarafından okunabilir</strong> varsayılandır; bir öğenin izni daha sonra değiştirilebilir. </p>
+
+    <p>Not 3: <strong>Yeni öğeler herkes tarafından okunabilir </strong>işaretli değilse, kimlerin yeni öğeleri okuyabileceği size daha sonra sorulacaktır. Yine, bu varsayılandır ve daha sonra değiştirebilir. </p>
+
+
+    <h4><a name="wizard_description"></a>Koleksiyon Tanımlama (Bilgilendirme)</h4>
+
+    <p>Bir sonraki sayfa size koleksiyon hakkında temel bilgileri girmenize izin verir. <strong>İsim, Kısa Tanımlar ve Tanıtıcı Metin</strong> alanları zorunludur, diğerleri zorunlu değildir (Unutmayınız ki sihirbaz çok katı değildir ve bu bilgileri doldurmanız için sizi zoylamayacaktır).</p>
+
+<p><strong>Telif Hakkı Metni </strong>koleksiyonun ana sayfasının en altında görünecek olan metindir. </p>
+
+    <p><strong>Lisans</strong>, bu koleksiyon için olan depozito lisansıdır (göndericilerin bir öğe gönderdiğinde onaylaması gereken lisans).  Varsayılan lisans ayarın üstüne yazar (sistem yöneticileri tarafından düzenlenmesi gerekir ve [dspace]/config/default.license'da saklananır). Bu alanı boş bırakırsanız, varsayılan lisans kullanılacaktır.</p>
+
+    <p><strong>Kaynak</strong>, arzu ederseniz istediğiniz kaynak bilgilerinin konabileceği boş bir metin alanıdır. Son kullanıcılara görünebilir değildir.</p>
+
+
+    <h4><a name="wizard_permissions"></a>Koleksiyon Yetkilendirmesi</h4>
+
+    <p>
+<em>Kabul Et/Reddet</em> gönderi iş akışını gerçekleştirebileceğini soran bir grup ekranla karşılaşacaksınız.  Bu sayfalar aynı <a href="collection-admin.html#groupeditor">grup düzenleyici</a> gibi çalışır.  Bu izin grubunda yer alan tüm eKişi ve/veya grupları seçtikten sonra 'Sonraki' tuşuna basınız.</p>
+
+    <p>Not : Bu sihirbaz ile yeni eKişileri ekleyemezsiniz. Tüm eKişilerin kayıtları öncelikle sisteme yüklenmelidir. Ancak gerektiği takdirde daha sonra her gruba, eKişiler ve / veya gruplar ekleyebilirsiniz.</p>
+
+
+<h4><a name="wizard_default"></a>Varsayılan Öğe Ürtverisinin Girişi</h4>
+
+    <p>Bu ekranda, yeni gönderilerin daha önce doldurulmuş Dublin Core değerlerini sizde belirtebilirsiniz. Buraya girdiğiniz bazı değerler, gönderi arayüzünde görünmez,  bu yüzden son kullanıcıların bunları düzenleme şansları yoktur. Bu iyi ya da kötü bir şey olabilir! (FIXME?) Aynı zamanda, bu Dublin Core değerleri, yığın aktarma ile gelen öğelere de eklenecektir.</p>
+
+    
+    <h3><a name="editcollection"></a>Koleksiyon Düzenleme </h3>
+    <p>Koleksiyon düzenleme sayfası (isim ve giriş paragrafı gibi) bazı üstverileri düzenlemenizi, yetki ve iş akışı kısımlarını yapılandırmanızı ya da koleksiyonu tamamen silmenizi sağlar. </p>
+
+    <p>‘Sil’ butonu (sayfanın en üstünde yer alan) koleksiyonu ve tüm öğelerini arşivden siler. </p>
+
+  <p><strong>Ad, Kısa Açıklama ve Tanıtım Metni</strong> bölümleri zorunludur, diğer kısımlar değildir.  Bu zorlayıcı olmasa da doldurulması tavsiye edilir. </p>
+
+    <p><strong>Telif Hakkı</strong>, koleksion ana sayfasının en altında görüntülenen düz metindir.</p>
+
+    <p><strong>Lisans</strong>, bu koleksiyon için olan depozito lisansıdır (göndericilerin bir öğe gönderdiğinde onaylaması gereken lisans).  Varsayılan lisans ayarın üstüne yazar (sistem yöneticileri tarafından düzenlenmesi gerekir ve [dspace]/config/default.license'da saklananır). Bu alanı boş bırakırsanız, varsayılan lisans kullanılacaktır. Kişiselleştirilmiş lisanslar oluşturmak için bazı değişkenler aşağıdadır:</p>
+    <ul>
+  <li><strong>%1$s</strong> "gönderici adı" kısmına dönüştürülecek</li> 
+		<li><strong>%2$s</strong> "gönderici soyadı" kısmına dönüştürülecek</li>
+		<li><strong>%3$s</strong> "gönderici e-postası" kısmına dönüştürülecek</li>
+		<li><strong>%4$s</strong> "güncel tarih" kısmına dönüştürülecek</li>
+		<li><strong>%5$s</strong> "koleksiyon bilgisi" kısmına dönüştürülecek</li> 
+		<li><strong>%6$s</strong> "öğe bilgisi" kısmına dönüştürülecek</li>
+		<li><strong>%7$s</strong> "eKişi bilgisi" kısmına dönüştürülecek</li> 
+    </ul>
+	<p>Lisans metninde % sembolünü kullanmak zorunda kalırsanız önüne tekrar % sembolü eklemeniz gerekir, örneğin %%.  Lisans değişikliğini kontrol etmek için sahte bir gönderi kullanabilirsiniz. <strong>Son lisans durumunu Lisans Kabul/Ret kısmında kontrol ediniz.</strong>
+</p>
+
+    <p><strong>Kaynak</strong>, arzu ederseniz istediğiniz kaynak bilgilerinin konabileceği boş bir metin alanıdır. Son kullanıcılara görünebilir değildir.</p>
+    Koleksiyonun ana sayfada görüntülenecek logoyu eklemek veya değiştirmek için, Logo Yükle tuşuna tıklayın. Bir sonraki aşamada logo dosyasının yolunu girin ya da göz atma kısmından bir logo seçtikten sonra Yükle butonunu tıklayın.
+<p><a href="#authorize">Yetkilendirmeleri</a>, <a href="collection-admin.html#submitters">göndericileri</a> ya da koleksiyon yöneticilerini eklemek ya da değiştirmek için;  grupları ve onların eylemlerini oluşturmak/düzenlemek için uygun butonlara tıklayın.
+<p>İş akışı gruplarını düzenlemek için, (oluşturacağınız ya da değişilik yapacağınız grup için iş akışı basamağını seçin) <a href="collection-admin.html#groupeditor">grup düzenleme</a> sürecini takip edin.</p>
+
+    <p>Koleksiyona eklenecek tüm öğelerin varsayılan üstveri alanları değerlerini ayarlayabileceğiniz,  <a href="#wizard_default">‘varsayılan öğe üstveri sayfası’</a> nı görüntülemek için ' Öğe Şablonu' butonuna tıklayın.</p>
+
+    <h3><a name="epeople"></a>eKişi</h3>
+
+    <p>Bu aracı sistemde, -göndericileri , yöneticileri, iş akışı üyeleri, aboneleri ya da kısıtlı içeriği okuma hakkına sahip kullanıcıları- yetkilendirme, e-posta adresi ve diğer kişisel bilgilerini kaydetmek için kullanabilirsiniz.</p>
+
+    <p>Kullanıcılar ayrıca bu listeye kendileri kayıt olarak da ulaşabilirler (eğer site ayarları izin veriyorsa), fakat bu onlara herhangi bir yetki vermez. Gönderici grubuna ya da iş akışı yöneticisi olarak eklemek istediğiniz kişilerin mutlaka önce buraya kayıt olmaları gerekir.</p>
+
+    <h4>eKişiyi Kaydetme</h4>
+
+    <p>Birini kaydetmek için, <strong>eKişi Ekle</strong> tuşuna tıklayınız ve bilgilerini giriniz.</p>
+
+    <ul>
+      <li><p>Eğer kullanıcı bir şifreyle giriş yapıyorsa, <strong>Oturum Açabilir</strong> kısmını <em>boş bırakın</em> çünkü bu sisteme kullanıcının kayıtlı, aktif bir hesabı olduğunu bildirir. Yeni üyeler için bu geçerli değildir. İlk önce kullanıcı adı ile bir şifre almaları gerekir.</p></li>
+      
+      <li>
+      <p>"Sertifika gerekli" işaret kutusu MIT'nin X509 sertifika doğrulayıcısı tarafından kullanılır. <code>MITAuthenticator</code> kimlik doğrulayıcısı kullanmadığınız sürece bunu yoksayabilirsiniz.</p>
+
+      <p>Eğer "sertifika gerekir" kısmını işaretlerseniz, ayrıca "giriş yapabilir" kısmını da seçmiş olursunuz. Bu kullanıcıların sertifikalarını kullanarak kayıt olmaya gerek duymadan giriş yapabileceği anlamına geliyor. Eğer kullanıcıların kayıt olma işlemine devam etmesini istiyorsanız ( bu şekilde adları ve diğer bilgileri girerler), o zaman "giriş yapabilir" kısmını boş bırakın.</p></li>
+    </ul>
+
+    <p>İşlem bittiğinde <strong>Kaydet</strong>'e tıklayın.</p>
+
+    <h4>eKişiyi silme ya da eKişi Bilgilerini Düzenleme</h4>
+
+    <p><strong>eKişiyi Seç</strong> tuşuna tıklayın ve sistemdeki eKişiler açılır bir pencere ile listelenecektir. Açılır pencerenin alt ve üstündeki bağlantılar liste boyunca ilerlemenizi sağlar. Ayrıca listeyi e-posta adresi, soyad ya da ID olarak da sıralayabilirsiniz. Listedeki her eKişinin solunda, bir 'seç' tuşu vardır. İlgili eKişinin yanındaki seç tuşuna basın ve açılır pencere kapanıp eKişi bilgileri "Yönetici eKişiler" ana sayfasında görüntülenecektir. Daha sonra "düzenle" ya da "sil" seçeneklerine tıklayarak kullanıcı bilgilerini düzenleyebilir ya da silebilirsiniz. </p>
+
+
+    <h3><a name="groups"></a>Gruplar</h3>
+
+    <p>Bu bölüm, sistemde belli işlevler için yetki verilen eKişi gruplarını ve/veya grupları oluşturmak, düzenlemek ve silmek için kullanılır.</p>
+
+  <p>‘Anonim’ adlı grup, sistemi kullanan her kişiyi temsil eden ‘özel’ bir gruptur. Bu grup, anonim kullanım hakkı için yetki ilkeleri belirlenebilsin diye oluşturulmuştur (‘herkes bu öğeyi okuyabilir’).</p>
+
+    <p>‘Yönetici’ grubunun üyeleri sistemde her işlemi gerçekleştirebilir, bu yüzden bu gruba kimlerin gireceği konusunda dikkatli olunmalıdır.</p>
+
+    <p>Diğer gruplar çeşitli amaçlar için kullanılabilir. Bunlar, belli bir koleksiyona gönderi yapmaya izinli eKişileri; gelen gönderileri değerlendirme gibi, belli bir iş akışı adımından sorumlu olan eKişileri; ya da bazı erişim kısıtlı içeriği görmeye yetkisi olan eKişi gruplarını temsil eder. Her bir grubun ne yapmaya yetkili olduğu bilgisi <a href="#authorize">yetkilendirme bölümü</a> kullanılarak kontrol edilir.</p>
+
+    <p>Gruplar, yetki vermede daha esnek olabilsin ve daha rahat devam edebilsinler diye başka grupları içerebilirler. Bu, hiyerarşik grup yapılarını yansıtmak açısından faydalıdır. Örneğin, belli sorumlulukları olan bir grup eKişi, farklı sorumlulukları ve/veya sorumluluk kapsamı olan daha büyük başka bir grubun parçası olabilir.</p>
+
+    <p>Grupların isimleri olabilir. İsimler sistem tarafından otomatik olarak, grubun ne için olduğuna dayanarak atanır. Bunun genelde biçimi şu şekildedir:</p>
+
+    <pre>OBJECTTYPE_OBJECTID_ACTION</pre>
+
+    <p>Örneğin, XYZ koleksiyonuna gönderi yapmaya yetkisi olan eKişi grubunun adı şu şekilde olurdu:</p>
+
+    <pre>COLLECTION_XYZ_ADD</pre>
+
+    <p>Bu durumda, XYZ aracı değil, koleksiyonun dahili kimliği (veri tabanı birincil anahtarı) olduğu göz önünde bulundurulmalıdır. 'Bölümler & Koleksiyonlar'a tıklayarak, bölüm ya da koleksiyon için gerekli dahili kimlik bilgilerinize ulaşabilirsiniz. Bölüm ya da koleksiyon adının yanında bulunan parantez içindeki ikinci sayı, o nesnenin dahili kimliğidir.</p>
+
+    <p>Kendi oluşturduğunuz gruplarda, bu isim oluşturma düzenini takip etmeniz önerilir, böylece istediğiniz gruba gerektiğinde daha rahat ulaşabilirsiniz. Yöneticiler için olan kullanıcı arayüzü, iş akışı adımları için grupları otomatik olarak oluşturacaktır, ancak göndericiler için grupları kendiniz oluşturmalısınız.</p>
+
+    <h4>Grup Oluşturma ve Düzenleme</h4>
+
+    <p>El ile bir grup oluşturmak için <strong>Yeni Grup Oluştur</strong> üzerine tıklayın. Yukarıda bulunan varsayılan grup adını istenilen isim ile değiştirin ve <strong>Grup Güncelle</strong> butonuna tıklayın.</p>
+
+    <p><a href="collection-admin.html#groupeditor">Grup düzenleyicisini kullanmak için talimatlar</a></p>
+
+
+
+    <h3><a name="items"></a>Öğeler</h3>
+
+    <p>Bu uygulama aracını bir öğeyi düzenlemek, geri çekmek ya da silmek için kullanabilirsiniz. Bir öğenin aracı ya da dahili kimliğini (veri tabanı birincil anahtarı) ilgili kutucuğa girebilirsiniz. Farklı şekilde, eğer bir yönetici (Administrator) olarak bağlanmışsanız, ilgili öğenin görüntülendiği sayfaya gidip çıkan sayfadaki<strong> Düzenle </strong>tuşuna tıklamak daha kolay olabilir.</p>
+
+    <p><a href="collection-admin.html#editmetadata">Öğeleri düzenlemek için talimatlar</a></p>
+
+    <p><a href="collection-admin.html#withdraw">Öğeleri geri çekmek için talimatlar</a></p>
+
+    <p>Silme fonksiyonunun öğeyi ve ilgili üstverilerini de sistemden hiçbir iz bırakmadan kaldıracağını biliniz. Bu fonksiyonun henüz tam olarak test edilmediğini (ve tavsiye edilmediğini) ve bu nedenlerle sorunlar çıkabileceğini biliniz. Örneğin, silme işleminin herhangi bir kaydı olmadığından, maddenin silindiği OAI (Açık Erişim İnsiyatifi) kullanıcılarına (Harvester) açıkça gösterilmez.</p>
+
+
+    <h3><a name="supervision"></a>Denetim Kuralları</h3>
+    
+    <p>Yönetim alanından <em>Denetçiler</em>i seçtiğinizde karşınıza 3 seçenek çıkacaktır:</p>
+
+	<ul>
+		<li>Denetleme İsteği Ekle</li>
+		<li>Mevcut Denetleme İsteklerini Görüntüleyiniz</li>
+		<li>Denetleme İstekleri Veri Tabanını Temizle</li>
+	</ul>
+
+	<p>Aşağıdaki bölümler ortak denetim kuralları görevlerinin nasıl ele alınacağını gösteren detaylardır.</p>
+
+	<p><em>NOT: Denetleme İstekleri Veri Tabanını Temizle seçeneği, veri tabanında temel bakım işlemlerini gerçekleştirmek için arada bir kullanılmalıdır. Bu tamamen otomatiktir ve bunu yapmak çok kısa bir süre alır.</em></p>
+
+
+	<h4>Mevcut Denetleme İsteklerini Görüntüleyiniz</h4>
+
+	<p><em>Mevcut Denetleme İstekleri</em>ni seçin ve burada yürürlükte olan bütün denetim isteklerinin listesi sunulacaktır. Bu sayfadan denetim kuralı politikasını değiştirebilir ya da kaldırabilirsiniz (aşağıdaki bölüme bakınız).</p>
+
+  <p>Bu sayfadaki detaylar denetimi yapan grubun ismini, denetlenen öğenin yazarını ve bu öğenin başlığını görmenizi sağlar.</p>
+
+	<p>Bu sayfadan ayrıca aşağıdaki <strong>Denetleme İsteği Ekle</strong> bölümünde olduğu gibi, yeni bir denetim kuralı da ekleyebilirsiniz.</p>
+
+
+<h4>Denetleme İsteği Ekle</h4>
+
+	<p><em>Denetleme İsteği Ekle</em>'yi ana denetim kuralı sayfası ya da Denetleme İsteği Ekle sayfasından gerçekleştirebilirsiniz.</p>
+
+  <p>Denetim kuralı oluşturmak için, denetimi gerçekleştirecek grubu ve çalışma alanındaki denetlenecek öğeyi tanımlamanız gerekmektedir. Ek olarak bu sayfa, denetim grubunun öğe üzerindeki yetkisini belirleyen, varsayılan politikaları oluşturmanızı sağlar.</p>
+	
+	<p>Bu sayfadaki grup listelerinden istenilen grubu seçin; bu kutu sistemde varolan grupların hepsini içermektedir. Daha sonra, Denetlenecek çalışma alanı öğesini seçin. Bu işlem, sayfada kullanıcı çalışma alanındaki tüm öğeleri gösteren listedeki öğenin sağında yer alan yuvarlak seçim kutusuna tıklanarak yapılabilir.</p>
+
+<p><em>NOT: Öğe listesinin solundaki sütunda bulunan kimlik, çalışma alanı öğesi için olan veri tabanı kimliğidir ve bu sistem yöneticilerine referans olması için bulunmaktadır.</em></p>
+
+	<p>Bağlantı kurulacak grup ve çalışma alanı öğesini seçtikten sonra, <em>Öncelikli İlke Ayarları</em> kutusundan varsayılan ilke seçilmelidir. Varsayılan İlke seçenekleri :</p>
+	
+	<ul>
+		<li><strong>Yok</strong> - Denetim isteği oluşturuldu fakat, denetlenecek öğeyle ilgili denetim grubuna hiçbir ilke verilmedi. Bu genellikle, yöneticinin bu denetleme isteği için el ile ilke oluşturmaya karar verdiğini gösterir.</li>
+        
+		<li><strong>Gözlemci</strong> – Denetim grubuna öğeye OKUMA izni verilir (fakat hiçbir paket ya da veri akışına izin yoktur). Herhangi bir yeni paket ya da veri akışının OKUMA işlemleri için denetim grubu politikasını izlemesi gereklidir.</li>
+        
+		<li><strong>Editör</strong> - Denetim grubuna EKLEME, YAZMA ve OKUMA iznini verir (fakat var olan hiçbir paket veya veri akışı için değil). Herhangi bir yeni paket ya da veri akışının EKLEME, YAZMA ve OKUMA işlemleri için denetim grubu politikasını izlemesi gereklidir</li>
+	</ul>
+	
+<p>Seçiminizden memnun olduktan sonra <em>Denetim İsteği Gönder</em>’e tıklayın. Ayarlar uygulanacak ve denetim isteği ana sayfasına yönlendirileceksiniz.</p>
+
+
+	<h4>Denetim İsteklerini Kaldırma</h4>
+
+	<p><em>Güncel Denetim İsteklerini Görme</em> sayfasına gidin ve istediğiniz denetim kuralını seçin ve kaldırın. İsteğin kaldırılması için onayınız istenecektir ve tercihiniz üzerine bu istek sistemden kaldırılacaktır.</p>
+
+
+	<h4>Denetim İstek İlkelerini Kişiselleştirmek</h4>
+
+	<p>
+    <em>Güncel Denetim İsteklerini Görme</em> sayfasına gidin ve kişiselleştirmek istediğiniz denetim istek ilkelerini seçin. Buradan <em>Öğeler İçin İlkeler</em> sayfasına yönlendirileceksiniz. Burada o öğe için belirlenen ilkeleri kişiselleştirebilirsiniz.</p>
+
+  <p>Denetim grubu için ilkeler oluşturmak üzere, örneğin, öğe için Yeni İlke Ekle’yi ya da bir bunu oluşturan parçalarını seçmelisiniz ve daha sonra grup listesinden ayarlamak istediğiniz denetim grubunu seçin. Daha sonra da gerçekleştirmek istediğiniz Eylemi seçebilir ve İlkeyui Kaydet’e tıklayabilirsiniz.</p>
+
+
+    <h3><a name="dublincore"></a>Üstveri Kaydı</h3>
+
+    <p>DSpace Varsayılan olarak, Dublin Core Kütüphaneler Çalışma Grubu Uygulamaları Profiline dayalı <a href="http://dublincore.org/documents/library-application-profile/">Dublin Core Çerçevesinin</a> kabul edilen versiyonunu kullanmaktadır. Kayıttaki diğer düz üstveri çerçevelerini de ayarlayabilirsiniz. Üstveri kaydı yorumlarla birlikte, elemanlar ve niteleyicilerin listesini sağlar.</p>
+
+    <p>Bu araçla, ihtiyacınıza uyması için  kaydı düzenleyebilirsiniz, fakat aşağıdakileri dikkate almanız gerekmektedir:</p>
+
+    <ul>
+      <li>Bir keresinde sadece bir öğe ya da niteliğini düzenleyebilirsiniz. Düzenlemeleri aynı satır içinde yapmalı ve ilgili 'güncelle' tuşuna tıklamalısınız. Sadece düzenlediğiniz satırdaki yapmış olduğunuz değişiklikler kaydedilecektir.</li>
+      
+      <li>Eğer bir öğe ve niteliği silerseniz, öğenin üstverisinde bulunan bütün unsur ve özelliklerin her biri silinecektir.</li>
+      
+      <li>Eğer bir öğeyi ya da niteliği güncellerseniz, örneğin 'katkı sağlayan'ı 'oluşturan'a çevirir ve 'Güncelle'ye tıklarsanız, üstverideki 'katkı sağlayan'a ait her şey 'oluşturan'a dönüşecektir.</li>
+      
+      <li>Bazı Dublin Core elemanları  ve niteleyicileri farklı fonksiyonlar için sistem tarafından kullanılmaktadır, OAI harmanlama için <code>date.available</code> gibi ve <code>title</code> görüntüleme ve arama dizini için. Bunlar için kapsam notlarını değiştirebilirsiniz fakat eleman veya niteleyiciyi değiştirememeli veya kaldırmamalısınız. Sistem tarafından hangilerinin kullanıldığı görmek için, <code>[Dspace source] / config/registries/Dublin-core.xml</code> dosyasına göz atın.</li>
+    </ul>
+
+    <p><code>dublin-core-types.xml</code> sadece oluşturma işlemi sırasında, veri tabanındaki üstveri kaydı  için kullanılır. Bu arayüz ile yaptığınız değişiklikler XML dosyalarına değil (tam tersi) sadece veri tabanı kaydına yansıyacaktır.</p>
+
+
+    <h3><a name="bitstream"></a>Veri Akışı Biçim Kaydı</h3>
+
+    <p>Veri akış listesi bilinen veri akışları ve bunların destek seviyeleri hakkında bilgi vermektedir. Bu araçla, yeni veri akışı biçimlerini düzenleyebilir ya da ekleyebilirsiniz. Lütfen aşağıdakileri dikkate alınız:</p>
+
+    <ul>
+      <li>Bir keresinde sadece bir veri akışı düzenleyebilirsiniz. Düzenlemeleri aynı satır içinde yapmalı ve ilgili satırdaki 'Güncelle' tuşuna tıklamalısınız. Sadece düzenlediğiniz satırdaki yapmış olduğunuz değişiklikler kaydedilecektir.</li>
+      
+      <li>“Uzantılar” yüklenilen dosyaların biçimini otomatik olarak belirlemek için kullanılan dosya uzantılarıdır. Her bir biçim için virgül ile ayrılmış bir çok uzantı girebilirsiniz.</li>
+      
+      <li>Her bir biçimin “Adı” tekil olmalıdır fakat MIME türü bunu gerektirmemektedir. Örneğin, MIME türü her bir madde için aynı olmakla beraber, Microsoft Word’un farklı versiyonları için farklı biçim kayıt girişleriniz olabilir.</li>
+      
+      <li>“Dahili” biçimler kullanıcıdan gizlenmektedir ve yönetim amaçlı kullanılmaktadır. Örneğin, göndericilerin onayladığı lisanslar 'Lisans' biçim veri akışları olarak depolanmakta ve son kullanıcılara gösterilmemektedir.</li>
+      
+      <li>Eğer bir veri akış biçimini silerseniz, o biçimindeki veri akışları 'Bilinmeyen' biçim şekline dönüştürülecektir.</li>
+      
+      <li>'Bilinmeyen' ya da 'Lisans' biçimlerini silmeyiniz.</li>
+    </ul>
+
+  <p><code>Config/registries/bitstream-formats.xml</code> sadece oluşturma işlemi sırasında, veri tabanındaki üstveri kaydı için kullanılır. Bu arayüz ile yaptığınız değişiklikler XML dosyalarına değil (tam tersi) sadece veri tabanı kaydına yansıyacaktır.</p>
+
+
+  <h3><a name="workflow"></a>İş akışı</h3>
+
+    <p>Terk edilen veya hiçbir zaman tamamlanmamış iş akışlarını temizlemek için bu aracı kullanın.</p>
+
+
+    <h3><a name="authorize"></a>Yetkilendirme</h3>
+
+    <p>Bu kısım, bölümler, koleksiyonlar ve öğeler için spesifik yetkilendirme politikaları kurmak amacıyla kullanılmaktadır. Bir nesne üzerinde kullanıcıların bir eylem gerçekletirebilmesi için izne ihtiyaçları bulunmaktadır. DSpace 'varsayılan olarak reddet' poltikası yürütmektedir. İzinler 'takas' edilemez. Eğer bir eKişinin öğe için OKUMA iznine sahip olması, bu öğeye ait paket ya da veri akışları üzerinde OKUMA izinlerine sahip olması gerektirmez.</p>
+
+    <h4><a name="collectionpolicies"></a>Koleksiyonun Politikasını Yönet</h4>
+
+    <p>Koleksiyon-ilişkili grupların rollerini gerçekleştirebilmeleri için, yetkilendirilmelerinde bu aracı kullanın.</p>
+
+    <ul>
+      <li><strong>Koleksiyonun Politikasını Yönet</strong>'e tıklayın.</li>
+      
+      <li>Yetkilendirmek isteğiniz koleksiyonun adını seçip <strong>İlke Düzenle</strong>’ye tıklayın.</li>
+      
+      <li><strong>Yeni Ekle</strong>’ye tıklayın.</li>
+      
+      <li> Yetkileri ayarlamak istediğiniz grubu seçin ve sonra o grup için açılan menüden bir eylem seçin. </li>
+      <li><strong>İlkeyi Kaydet</strong>’e tıklayın.</li>
+      
+      <li>Bütün ilkeler ayarlanana kadar tekrar edin.</li>
+    </ul>
+
+<p>Not:  Bir koleksiyon kabul edilen yeni öğe koleksiyonu ile ilişkili yetkilendirme ilkeleri mirası: DEFAULT_ITEM_READ ve DEFAULT_BITSTREAM_READ   </p>
+    <ul>
+      <li>
+     <p>Bir koleksiyona kabul edilen yeni gönderilmiş öğeler, koleksiyonla ilgili <strong>DEFAULT_ITEM_READ</strong> ve <strong>DEFAULT_BITSTREAM_READ </strong>yetkilendirme ilkesine sahip olur ki bu, öğenin ve veri akışlarının <strong>OKUMA</strong> politikası halini alır. Ancak, öğeler kabul edildikten sonra bir koleksiyonun varsayılan politikalarını değiştirirseniz, var olan öğeninin kendi politikaları otomatik olarak değiştirilmeyecektir. Bunların erişilebilir hale getirilmesi için <strong>İleri İlke Yönetim Aracı</strong> kullanılararak öğeler üzerindeki izinleri değiştirmelisiniz.</p></li>
+      
+       <li>
+         <p>Gönderici grubu için bütün koleksiyonların <strong>EKLE </strong>ilkesiinin olması gerekir, aksi halde hiç kimse koleksiyona öğe gönderemez.</p></li>
+    </ul>
+
+
+  <h4><a name="communitypolicies"></a>Bölüm Politikaları</h4>
+
+    <p>Bu araç yukarıda belirtildiği gibi,  koleksiyonlara benzer şekilde, bölüm ilkelerinin düzenlenmesine izin verir.</p>
+
+    <p>Yönetim merkezi olarak gerçekleştiği için, bu araç çok fazla kullanıma sahip değildir- genellikle bir bölüm oluşturduktan hemen sonra <strong>Anonim </strong> grup için <strong>OKUMA </strong>iznini ekleyin ve öylece bırakın. Bu izin, eğer varsa bölümün logosuna uygulanır ki, kişiler bölüm ana sayfasına gittiklerinde logonun görülmesini sağlar.</p>
+
+    <p>Bir bölümün politikaları varsayılan olarak <strong>Anonim OKUMA'</strong>ya ayarlanır.</p>
+
+
+    <h4><a name="itempolicies"></a>Öğe İlkesini Yönet</h4>
+
+    <p>Bu araç bireysel öğelere ait politikaların düzenlenmesine izin verir. Koleksiyondaki bir öğenin diğerlerinden farklı politikalara sahip olmasını isterseniz, bunları kişiselleştirmek için öğe ilke editörünü kullanabilirsiniz. Bir koleksiyondaki tüm öğelerin aynı yetkilendirmeyi paylaşması açısından uzun vadede koleksiyon yönetimi açısından iyi bir uygulamadır.</p>
+
+
+    <h4><a name="advancedpolicies"></a>İleri İlke Yönetim Aracı</h4>
+
+    <p>Bu aracı tüm koleksiyondaki öğe ve veri akışlarının ilkelerini ayarlarken ay da temizleme için kullanın. İlkeleri Temizle tuşunu kullanırken dikkatli olun.</p>
+
+    <p>Alttaki listeden izinlerini vermek ya da kaldırmak istediğiniz grubu ve üstteki listeden de koleksiyonu seçiniz. Daha sonra izinlerini düzenlemek istediğiniz nesne türünü (öğe ya da veri akışı) seçiniz. Sonra da açılan listeden eylemi seçiniz.</p>
+
+    <p>Örneğin, ayrıcalıklı_kullanıcılar grubundaki herkese, sınırlı bir koleksiyondaki tüm veri akışlarına <strong>OKUMA</strong> erişimi  vermek istediniz. Üst listeden 'ayrıcalıklı_kullanıcılar'ı,  'içerik türü' listesinden 'veri akışını' , ‘group listesi'nden ‘ayrıcalıklı_kullanıcılar'ı’,  ve ‘eylem’den  ‘Okuma’yı seçip sonra da ‘Politika Eke’yi tıklayın.</p>
+
+
+    <h3><a name="editnews"></a>Haber Düzenleme</h3>
+
+    <p>Bu aracı DSpace ana sayfasındaki iki yerde bulunan metni &quot;haberleri&quot; düzenlemek için kullanabilirsiniz: Orta çerçevenin en üst kutusu ve sağdaki kenar çubuğu</p>
+    
+    <p>Yönetici menüsünden &quot;Haberleri Düzenle&quot;ye tıkladıktan sonra düzenlemek istediğiniz haber öğesinin yanındaki <strong>Düzenle</strong> tuşuna tıklayınız.  Güncel haberlerin yer aldığı bir metin kutusu görünecek ve bu kutunun içinde doğrudan silme - değiştirme işlemi yapabileceksiniz.  Metni biçimlendirmek için HTML etiketlerini kullanabilirsiniz fakat HTML'nin burada geçerli olmayacağını bilmelisiniz.</p>
+    <p>&nbsp;</p>
+    
+    <h3><a name="editlicense"></a>Varsayılan Lisansı Düzenleme</h3>
+<p>Bu aracı DSpace'in varsayılan lisansını düzenlemek için kullanabilirsiniz.</p>
+    <p>Varsayılan lisans herhangi bir özel koleksiyon lisansı tanımlanmadığı zaman kullanılır.</p>
+    
+    <p>Varsayılan lisansı değiştirmek hali hazırda yayınlanmış öğeler üzerinde herhangi bir etkiye sahip değildir.</p>
+    
+  <p>Bazı değişkenler ile gönderi lisans içeriği ayarları yapılabilir.</p>
+    <ul>
+      <li><strong>%1$s</strong> &quot;gönderici adı&quot; kısmına dönüştürülecek</li>
+      <li><strong>%2$s</strong> &quot;gönderici soyadı&quot; kısmına dönüştürülecek</li>
+      <li><strong>%3$s</strong> &quot;gönderici e-postası&quot; kısmına dönüştürülecek</li>
+      <li><strong>%4$s</strong> &quot;güncel tarih&quot; kısmına dönüştürülecek</li>
+      <li><strong>%5$s</strong> &quot;koleksiyon bilgisi&quot; kısmına dönüştürülecek</li>
+      <li><strong>%6$s</strong> &quot;öğe bilgisi&quot; kısmına dönüştürülecek</li>
+      <li><strong>%7$s</strong> &quot;eKişi bilgisi&quot; kısmına dönüştürülecek</li>
+  </ul>
+    <p>Lisans metninde % sembolünü kullanmak zorunda kalırsanız önüne tekrar % sembolü eklemeniz gerekir, örneğin %%.  Lisans değişikliğini kontrol etmek için sahte bir gönderi kullanabilirsiniz. <strong>Son lisans durumunu Lisans Kabul/Ret kısmında kontrol ediniz.</strong> </p>
+<p><strong></strong></p>
+</body>
+</html>
